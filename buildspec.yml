@@ -3,7 +3,7 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      php: 7.1
+      php: 7.3
   build:
     commands:
       - printenv
