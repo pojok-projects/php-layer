@@ -1,0 +1,15 @@
+version: 0.2
+phases:
+  install:
+    commands:
+      - printenv
+      - ls -R
+  pre_build:
+    commands:
+  build:
+    commands:
+      - cd source/layer
+      - ./build_layer.sh
+      - cd -
+artifacts:
+  files: 'php_layer_713.zip'
