@@ -33,11 +33,11 @@ cd ${WORKDIR}/projects
 
 curl -sS https://getcomposer.org/installer | ./bin/php -c${WORKDIR}/projects/php.ini
 
-zip -r php_layer_713.zip bin bootstrap php.ini
+zip -r php_layer_730.zip bin bootstrap php.ini
 
 cd ${WORKDIR}
 
-mv ${WORKDIR}/projects/php_layer_713.zip ${WORKDIR}/../../
+mv ${WORKDIR}/projects/php_layer_730.zip ${WORKDIR}/../../
 
 cd ${WORKDIR}/../../
 
