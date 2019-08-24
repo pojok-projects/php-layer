@@ -28,7 +28,7 @@ mkdir -p ${WORKDIR}/projects/bin
 mkdir -p ${WORKDIR}/projects/lib
 
 cp -pR ${WORKDIR}/php-7-bin/bin/php ${WORKDIR}/projects/bin
-cp /usr/lib/x86_64-linux-gnu/lib*.so* ${WORKDIR}/projects/lib/
+cp /usr/lib/x86_64-linux-gnu/libzip.so* ${WORKDIR}/projects/lib/
 
 ${WORKDIR}/projects/bin/php -v
 
