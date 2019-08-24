@@ -19,8 +19,8 @@ cd openssl-1.0.1k && ./config && make && make install
 
 cd ${WORKDIR}
 
-curl -sL https://github.com/php/php-src/archive/php-7.1.3.tar.gz | tar -xvz
-cd php-src-php-7.1.3 && ./buildconf --force && ./configure --prefix=${WORKDIR}/php-7-bin/ --with-openssl=/usr/local/ssl --with-curl --with-zlib --enable-zip --with-pdo-mysql --without-pear --enable-mbstring --enable-dom --enable-libxml --enable-tokenizer --enable-simplexml --enable-mysqlnd --enable-mysqlnd --enable-opcache --enable-json --enable-bcmath --enable-cli --enable-pcntl --enable-sockets --enable-static
+curl -sL https://github.com/php/php-src/archive/php-7.3.0.tar.gz | tar -xvz
+cd php-src-php-7.3.0 && ./buildconf --force && ./configure --prefix=${WORKDIR}/php-7-bin/ --with-openssl=/usr/local/ssl --with-curl --with-zlib --enable-zip --with-pdo-mysql --without-pear --enable-mbstring --enable-dom --enable-libxml --enable-tokenizer --enable-simplexml --enable-mysqlnd --enable-mysqlnd --enable-opcache --enable-json --enable-bcmath --enable-cli --enable-pcntl --enable-sockets --enable-static
 
 make install
 

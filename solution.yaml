@@ -7,33 +7,39 @@ Parameters:
     Type: String
 
 Resources:
-  rPhp713LambdaLayer:
+  rPhpLambdaLayer:
     Type: AWS::Lambda::LayerVersion
     Properties:
       CompatibleRuntimes:
         - provided
-      Description: PHP 7.1.3 Lambda Layer
-      LayerName: !Sub '${pSolutionNaming}-713'
+      Description: PHP 7.3.0 Lambda Layer
+      LayerName: !Sub '${pSolutionNaming}-730'
       Content:
         S3Bucket: !Sub '${pSolutionNaming}-${AWS::AccountId}-${AWS::Region}-s3'
-        S3Key: php_layer_713.zip
+        S3Key: php_layer_730.zip
 
   rPhp713LambdaLayerPermission:
     Type: AWS::Lambda::LayerVersionPermission
     Properties:
       Action: lambda:GetLayerVersion
-      LayerVersionArn: !Ref rPhp713LambdaLayer
+      LayerVersionArn: !Ref rPhpLambdaLayer
       Principal: !Sub '${AWS::AccountId}'
 
 Outputs:
   oLayerArn:
-    Value: !Ref rPhp713LambdaLayer
+    Value: !Ref rPhpLambdaLayer
     Description: 'Arn of the layer'
     Export:
       Name: !Sub '${pSolutionNaming}-arn'
 
+  oLayerS3Bucket:
+    Value: !Sub '${pSolutionNaming}-${AWS::AccountId}-${AWS::Region}-s3'
+    Description: 'Physical location to the S3 bucket of PHP layer file'
+    Export:
+      Name: !Sub '${pSolutionNaming}-s3-bucket'
+
   oLayerS3Key:
-    Value: php_layer_713.zip
+    Value: php_layer_730.zip
     Description: 'Physical location to the S3 key of PHP layer file'
     Export:
       Name: !Sub '${pSolutionNaming}-s3-key'
