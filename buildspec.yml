@@ -13,5 +13,5 @@ phases:
       - cd -
 artifacts:
   files:
-    - 'php_layer_713.zip'
+    - 'php_layer_730.zip'
     - 'solution.yaml'
