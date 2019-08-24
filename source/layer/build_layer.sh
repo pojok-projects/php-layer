@@ -25,15 +25,20 @@ cd php-src-php-7.3.0 && ./buildconf --force && ./configure --prefix=${WORKDIR}/p
 make install
 
 mkdir -p ${WORKDIR}/projects/bin
+mkdir -p ${WORKDIR}/projects/lib
 
 cp -pR ${WORKDIR}/php-7-bin/bin/php ${WORKDIR}/projects/bin
+cp /usr/lib64/lib* ${WORKDIR}/projects/lib/
+
+ls -R ${WORKDIR}/projects/lib/
+
 ${WORKDIR}/projects/bin/php -v
 
 cd ${WORKDIR}/projects
 
 curl -sS https://getcomposer.org/installer | ./bin/php -c${WORKDIR}/projects/php.ini
 
-zip -r php_layer_730.zip bin bootstrap php.ini
+zip -r php_layer_730.zip bin lib bootstrap php.ini
 
 cd ${WORKDIR}
 
